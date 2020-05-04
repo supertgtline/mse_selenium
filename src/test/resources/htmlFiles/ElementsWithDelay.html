@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Calling a Function Repeatedly with setInterval() Method</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $('#proceed1').delay(5000).fadeIn(); 
+	$('#proceed2').delay(10000).fadeIn();
+	$('#proceed3').delay(15000).fadeIn();
+});
+</script>
+</head>
+<body>
+    <button type="button" id="proceed1" style="display: none;">Button 1</button></br>
+	<button type="button" id="proceed2" style="display: none;">Button 2</button></br>
+	<button type="button" id="proceed3" style="display: none;">Button 3</button>
+</body>
+</html>                            
