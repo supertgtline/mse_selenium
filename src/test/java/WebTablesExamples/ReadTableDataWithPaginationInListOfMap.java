@@ -1,5 +1,6 @@
 package WebTablesExamples;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -7,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -65,8 +68,14 @@ public class ReadTableDataWithPaginationInListOfMap {
 				flag = false;
 				break;
 			} else {
+				// Before clicking Checking current page
+				int currentPage = Integer.parseInt(driver.findElement(By.xpath("//a[@class='paginate_button current']")).getText().trim());
+				System.out.println("We are at page "+currentPage+" now.");
 				driver.findElement(By.id("dtBasicExample_next")).click();
-				Thread.sleep(5000);
+				// Now we know for which page I need to wait
+				String customLoc = "//a[contains(@class,'paginate_button') and text()='"+(currentPage+1)+"']";
+				// Waiting till class attribute contains current
+				new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.attributeContains(By.xpath(customLoc), "class", "current"));
 			}
 		}
 
