@@ -25,7 +25,7 @@ public class ExplicitWaitWithDivisibleIntervalExample {
 		driver = new ChromeDriver();
 		
 		// Loading URL
-		driver.get("http://www.demoqa.com/");
+		driver.get("http://www.google.com/");
 		
 		// Setting up explicit wait with custom polling interval
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -19,7 +19,7 @@ public class TestCases1 {
 	public void GoogleTest(Method m) throws InterruptedException {
 		System.out.println(m.getName() + " of class TestCases1 Executed by Thread " + Thread.currentThread().getId()
 				+ " on driver reference " + DriverFactorySingleton.getInstance().getDriver());
-		DriverFactorySingleton.getInstance().getDriver().get("https://www.google.com/");
+		DriverFactorySingleton().getDriver().get("https://www.google.com/");
 		Thread.sleep(15000);
 		System.out.println("Title printed by Thread " + Thread.currentThread().getId() + " - "
 				+ DriverFactorySingleton.getInstance().getDriver().getTitle() + " on driver reference "
@@ -31,7 +31,7 @@ public class TestCases1 {
 	public void FacebookTest(Method m) throws InterruptedException {
 		System.out.println(m.getName() + " of class TestCases1 Executed by Thread " + Thread.currentThread().getId()
 				+ " on driver reference " + DriverFactorySingleton.getInstance().getDriver());
-		DriverFactorySingleton.getInstance().getDriver().get("https://www.facebook.com/");
+		DriverFactorySingleton().getDriver().get("https://www.facebook.com/");
 		Thread.sleep(15000);
 		System.out.println("Title printed by Thread " + Thread.currentThread().getId() + " - "
 				+ DriverFactorySingleton.getInstance().getDriver().getTitle() + " on driver reference "
